@@ -7,6 +7,9 @@ from tensorflow.keras.callbacks import TensorBoard, ModelCheckpoint
 from sklearn.model_selection import train_test_split
 from tensorflow.keras.utils import to_categorical
 
+# --- CONFIGURACIÓN ---
+MAX_FRAMES = 45
+
 # 1. Cargar los datos procesados
 print("Cargando tensores de datos...")
 try:
@@ -29,7 +32,7 @@ print(f"Diseñando modelo para {NUM_CLASES} clases...")
 modelo = Sequential()
 
 # Primera capa LSTM: Recibe los 30 frames y las 126 coordenadas
-modelo.add(LSTM(64, return_sequences=True, activation='relu', input_shape=(30, 126)))
+modelo.add(LSTM(64, return_sequences=True, activation='relu', input_shape=(MAX_FRAMES, 126)))
 
 # Segunda capa LSTM: Extrae patrones más complejos
 modelo.add(LSTM(128, return_sequences=False, activation='relu'))
