@@ -1,0 +1,14 @@
+# Ignorar la carpeta con los jsons de los chicos
+dataset_alumnos/
+
+# Ignorar los tensores pesados de NumPy
+*.npy
+
+# Ignorar el entorno virtual de Python (si usas uno)
+venv/
+env/
+__pycache__/
+
+# Ignorar archivos del sistema operativo
+.DS_Store
+Thumbs.db
